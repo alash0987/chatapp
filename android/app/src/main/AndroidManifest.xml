@@ -4,7 +4,7 @@
     <!--  For Internet Permission -->
     <uses-permission android:name="android.permission.INTERNET"/>
     <application
-        android:label="Alash chat"
+        android:label="Lumbini chat app"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
