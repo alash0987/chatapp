@@ -22,6 +22,7 @@ class Apis {
     try {
       final DocumentSnapshot doc =
           await firestore.collection('users').doc(auth.currentUser!.uid).get();
+      print('${doc.exists}==============');
       if (doc.exists) {
         return true;
       } else {
@@ -142,6 +143,15 @@ class Apis {
 
   //  For geting id of known users  from firebase firestore
   static Stream<QuerySnapshot<Map<String, dynamic>>> getMyUserId() {
+    if (user == null) {
+      // Handle null user case, maybe return a default stream or throw an error.
+      // Example:
+      throw Exception('User is null. Please sign in.');
+    }
+    // Assuming `user` is from Firebase Authentication.
+    if (!FirebaseAuth.instance.currentUser!.uid.isNotEmpty) {
+      throw Exception('User is not authenticated. Please sign in.');
+    }
     return firestore
         .collection('users')
         .doc(user!.uid)

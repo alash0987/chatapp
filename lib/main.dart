@@ -28,6 +28,8 @@ void main() async {
         statusBarColor: Colors.blue, statusBarIconBrightness: Brightness.dark),
   );
 
+  // await _initialization();
+  // await Firebase.initializeApp();
   await _initialization();
   await Apis.getMe();
 
