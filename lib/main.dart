@@ -13,8 +13,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_notification_channel/flutter_notification_channel.dart';
 import 'package:flutter_notification_channel/notification_importance.dart';
 import 'package:provider/provider.dart';
-// new
 
+// new
+//  random for update
 DateTime currentTime = DateTime.now().toLocal();
 int hour = currentTime.hour;
 int minute = currentTime.minute;
